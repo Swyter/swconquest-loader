@@ -52,7 +52,7 @@ char* SetActiveMod(){
 }
 
 
-HANDLE LaunchGame(){
+DWORD LaunchGame(){
 	STARTUPINFO Startup = {0};
 	PROCESS_INFORMATION processInformation = {0};
 	
@@ -73,7 +73,7 @@ HANDLE LaunchGame(){
       processInformation.hProcess,
       INFINITE
     );
-    return processInformation.hProcess;
+    return processInformation.dwProcessId;
     
   }else{
     return 0;
