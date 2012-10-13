@@ -11,9 +11,9 @@
 
 main(){
 
-	//checking if the game exists
-	printf("locating mount and blade 1011: ");
-	
+  //checking if the game exists
+  printf("locating mount and blade 1011: ");
+  
   if(!FileExists("../../mount&blade.exe")){
     printf("[not found] ");
     MessageBox(NULL,"Please place the Star Wars Conquest folder into the /Modules subdirectory of your Mount&Blade 1.011 installation.",
@@ -21,23 +21,23 @@ main(){
     exit(1);
   }
 
-	printf("[found]\n");
+  printf("[found]\n");
   
   
-	//selecting default module
-	printf("selecting '%s' as default module: ", SetActiveMod());
-	printf("[done]\n");
+  //selecting default module
+  printf("selecting '%s' as default module: ", SetActiveMod());
+  printf("[done]\n");
   
   
-	//launching the game
-	printf("launching the game with PID %d: ", LaunchGame());
-	printf("[done]\n");
+  //launching the game
+  printf("launching the game with PID %d: ", LaunchGame());
+  printf("[done]\n");
   
   
-	//injecting paths in memory
-	printf("injecting paths in memory: ");
-	printf("done\n");
-	
-	getchar();
-	return 0;
+  //injecting paths in memory
+  printf("injecting paths in memory: ");
+  printf("done\n");
+  
+  getchar();
+  return 0;
 }

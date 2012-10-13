@@ -53,10 +53,10 @@ char* SetActiveMod(){
 
 
 DWORD LaunchGame(){
-	STARTUPINFO Startup = {0};
-	PROCESS_INFORMATION processInformation = {0};
-	
-	int proc = CreateProcess("../../mount&blade.exe",
+  STARTUPINFO Startup = {0};
+  PROCESS_INFORMATION processInformation = {0};
+  
+  int proc = CreateProcess("../../mount&blade.exe",
                            NULL,
                            NULL,
                            NULL,
@@ -67,7 +67,7 @@ DWORD LaunchGame(){
                            &Startup,
                            &processInformation
                            );
-	
+  
   if(proc){
     WaitForInputIdle(
       processInformation.hProcess,
