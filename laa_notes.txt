@@ -1,0 +1,25 @@
+laa in pe images
+----------------
+
+f=open(bin.exe)
+verify magic [MZ]
+goto(base+0x3C) --pe header pointer location
+peheader=read(as 16bit unsigned int, two octets) --read pointer address
+
+goto(base+peheader) --now you're on the real header
+verify magic [PE 00]  -- not counting seek+4
+goto(base+peheader+0x4+0x12) --head over the characteristics bitfield
+                   ^magic,^offset
+				   
+characteristics=read(as 16 bit unsigned int, two octets)
+-----------------
+
+that's it. Now you've the bitfield.
+check w/AND or add w/OR using the following flag.
+
+IMAGE_FILE_LARGE_ADDRESS_AWARE
+0x0020|2^5
+
+http://msdn.microsoft.com/en-us/library/ms680349(v=vs.85).aspx
+
+save, you're good to go.
