@@ -11,24 +11,22 @@ BOOL FileExists(LPCTSTR szPath)
          !(dwAttrib & FILE_ATTRIBUTE_DIRECTORY));
 }
 
-char* GetCurrentFolderName()
-{
-  extern static char filename[MAX_PATH];
+char* SetActiveMod(){
+
+  char filename[MAX_PATH];
   GetModuleFileName( NULL, filename, MAX_PATH );
 
   //find the latest slash, get the string until that and return the pointer following the next occurence
   char*lslash = strrchr(filename, '\\');
   filename[(lslash-filename)]=0;
+  
+  char*szModName = strrchr(filename, '\\')+1;
 
-  return (char*)(strrchr(filename, '\\')+1);
-}
-
-BOOL SetActiveMod(const char*szModName){
   // some undefined constants in TinyCC's headers
   #define KEY_WOW64_64KEY 0x0100
   #define KEY_WOW64_32KEY 0x0200
 
-  PHKEY*keyThingie;
+  HKEY keyThingie;
   RegOpenKeyEx(
     HKEY_CURRENT_USER,
    "Software\\MountAndBladeKeys",
@@ -47,7 +45,7 @@ BOOL SetActiveMod(const char*szModName){
         strlen(szModName)
         );
     RegCloseKey(keyThingie);
-    return 1;
+    return szModName;
   }
   
   return 0;

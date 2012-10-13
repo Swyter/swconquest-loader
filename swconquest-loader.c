@@ -24,13 +24,7 @@ main(){
   
   
 	//selecting default module
-  char*modname;
-  modname=GetCurrentFolderName(modname);
-  
-  extern static char filename[MAX_PATH];
-  strcpy(filename,modname);
-  
-	printf("selecting '%s' as default module: ", modname); SetActiveMod(filename);
+	printf("selecting '%s' as default module: ", SetActiveMod());
 	printf("[done]\n");
   
   
