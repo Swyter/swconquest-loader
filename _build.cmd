@@ -4,8 +4,8 @@
 
 :build
 
-  windres -v res/%1.rc res/%1.rc.o                                                       && echo.  ~Resources processed... && echo. 
-  tcc -v %1-loader.c %1-inject.c %1-helper.c res/%1.rc.o -o _%1.exe -luser32 -ladvapi32  && echo.  ~Compilation done...    && echo. 
+  windres -v res/%1.rc res/%1.rc.o                                                     && echo.  ~Resources processed... && echo. 
+  tcc -v %1-loader.c %1-inject.c %1-helper.c res/%1.rc.o -o _%1.exe -ladvapi32 -bench  && echo.  ~Compilation done...    && echo. 
   goto :EOF
   
 :init

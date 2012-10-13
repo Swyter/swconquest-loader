@@ -9,7 +9,12 @@
 
 #include <windows.h>
 
-main(){
+int APIENTRY WinMain(
+        HINSTANCE hInstance,
+        HINSTANCE hPrevInstance,
+        LPSTR     lpCmdLine,
+        int       nCmdShow)
+{
 
   //checking if the game exists
   printf("locating mount and blade 1011: ");
@@ -38,6 +43,6 @@ main(){
   printf("injecting paths in memory: ");
   printf("done\n");
   
-  getchar();
+  //getchar();
   return 0;
 }

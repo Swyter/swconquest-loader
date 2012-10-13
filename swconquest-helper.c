@@ -22,6 +22,7 @@ char* SetActiveMod(){
   
   char*szModName = strrchr(filename, '\\')+1;
 
+  
   // some undefined constants in TinyCC's headers
   #define KEY_WOW64_64KEY 0x0100
   #define KEY_WOW64_32KEY 0x0200
