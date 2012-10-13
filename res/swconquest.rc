@@ -1,0 +1,27 @@
+100 ICON "swc_icon_mini.ico"
+
+1 VERSIONINFO
+FILEVERSION 0,9,4,0
+PRODUCTVERSION 0,9,4,0
+FILEOS 0x4
+FILETYPE 0x1
+{
+BLOCK "StringFileInfo"
+{
+	BLOCK "040904b0"
+	{
+		VALUE "CompanyName",      "SWC Dev Team <getconquest.net>"
+		VALUE "FileDescription",  "Star Wars Conquest Launcher"
+		VALUE "FileVersion",      "0.9.4"
+		VALUE "InternalName",     "swconquest.exe"
+		VALUE "LegalCopyright",   "© 2012 Created by Swyter"
+		VALUE "OriginalFilename", "swconquest.exe"
+		VALUE "ProductName",      "swconquest"
+		VALUE "ProductVersion",   "0.9.4"
+	}
+}
+BLOCK "VarFileInfo"
+{
+	VALUE "Translation", 0x0800, 0xFDE9
+}
+}
